@@ -1,9 +1,12 @@
 .hero {
   max-width: 80rem;
   margin-inline: auto;
+  justify-content: space-between;
+  padding-block: 2rem;
 
-  padding-block: 2.5rem;
+  overflow: hidden;
 
+  /* Headline */
   & h1 {
     max-width: 40rem;
   }
@@ -31,19 +34,14 @@
 
   & span {
     font: inherit;
-    /* color */
   }
-
-  /* h1 span {
-    display: block;
-    animation: slideUp 6s infinite ease-out;
-  } */
 
   & h1 span {
     display: block;
-    animation: slideUpTest 5s infinite cubic-bezier(0.56, 1.89, 0.4, 0.66);
+    animation: slideUp 5s 2s infinite cubic-bezier(0.56, 1.89, 0.4, 0.66);
   }
 
+  /* botões */
   & .buttons {
     display: flex;
     gap: 2rem;
@@ -55,127 +53,137 @@
       gap: 0.75rem;
       border-radius: 666rem;
 
-         
-     transition: scale 1s, box-shadow 1s ease-in-out;
+      transition: scale 300ms ease-in-out, box-shadow 600ms;
 
       &.buy {
         background-color: var(--snitap-sun);
+        box-shadow: inset 4px 4px 4px rgba(255, 229, 151, 0.3),
+          inset 0 -5px 3px rgb(65, 20, 1, 0), 0 2px 5px rgb(0, 0, 0, 0.1),
+          0 9px 9px rgb(0, 0, 0, 0.09), 0 20px 12px rgb(0, 0, 0, 0.05),
+          0 36px 15px rgb(0, 0, 0, 0.01);
+
         padding: 1.5rem 3rem;
+      }
+
+      &.buy:hover {
+        scale: 1.05;
+
+        box-shadow: inset 4px 4px 4px rgba(255, 229, 151, 1),
+          inset 0 -5px 3px rgb(65, 20, 1, 0.2), 0 10px 14px rgb(0, 0, 0, 0.1),
+          0 25px 25px rgb(0, 0, 0, 0.09), 0 56px 34px rgb(0, 0, 0, 0.05),
+          0 100px 40px rgb(0, 0, 0, 0.01);
       }
 
       &.play span {
         display: flex;
         padding: 1.5rem;
         border-radius: 50%;
-        /* background-color: white; */
+        background-color: white;
       }
 
-      &.buy:hover {
+      &.play:hover {
         scale: 1.05;
-      
-        box-shadow: 
-        inset 4px 4px 4px rgba(255, 229, 151, 1),
-        inset 0 -5px 5px rgb(65, 20, 1, 0.2),
-        0 6px 14px rgb(0, 0, 0, 0.1), 
-        0 25px 25px rgb(0, 0, 0, 0.09),
-        0 56px 34px rgb(0, 0, 0, 0.05), 
-        0 100px 40px rgb(0, 0, 0, 0.01);
       }
     }
 
     .shadow {
       box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1), 0 9px 9px rgb(0, 0, 0, 0.09),
-        0 20px 12px rgb(0, 0, 0, 0.05), 0 36px 15px rgb(0, 0, 0, 0.01);
+        0 20px 12px rgb(0, 0, 0, 0.05), 0 50px 15px rgb(0, 0, 0, 0.01);
     }
   }
+
+  /* Patins */
+  & > div:nth-child(2) {
+    display: block;
+    width: 100%;
+    max-width: 30.5rem;
+    height: 30.5rem;
+
+    & .content {
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      /* border: 2px solid crimson; */
+    }
+
+    & img {
+      position: absolute;
+      width: 100%;
+    }
+
+    & img[src*="ellipse"] {
+      width: 95%;
+      top: 3%;
+      left: 2%;
+
+      transform: translateX(200%);
+      animation: slideIn 3s 300ms ease forwards;
+    }
+
+    * img[src*="patins"] {
+      z-index: 1;
+      top: 3%;
+
+      transform: translateX(200%);
+      animation: slideIn 3s 200ms ease forwards;
+    }
+
+    * img[src*="stars-1"] {
+      max-width: 5.5rem;
+      top: 34%;
+      left: 1%;
+      z-index: 0;
+      opacity: 0;
+
+      transform: translateX(600%);
+      animation: slideIn 2s 900ms ease forwards, appear 500ms 900ms both;
+    }
+
+    * img[src*="stars-2"] {
+      max-width: 2.5rem;
+      right: 0;
+      bottom: 30%;
+      z-index: 0;
+
+      transform: translateX(400%);
+      animation: slideIn 2.2s 1000ms ease forwards;
+    }
+  }
+
+
 }
 
-@keyframes slideUpTest {
-  0%,
-  22% {
-    transform: translateY(0);
-  }
-
-  33%,
-  55% {
-    transform: translateY(-5rem);
-  }
-
-  66%,
-  88% {
-    transform: translateY(-10rem);
+@keyframes slideIn {
+  50% {
+    transform: translateX(-20px);
   }
 
   100% {
-    transform: translateY(-15rem);
+    transform: translateX(0);
+  }
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
   }
 }
 
 @keyframes slideUp {
-  /* radical static */
   0%,
   22% {
     transform: translateY(0);
   }
-  /* divertida in */
-  25% {
-    transform: translateY(calc(-5rem - 11px));
-  }
 
-  27% {
-    transform: translateY(calc(-5rem + 11px));
-  }
-
-  29% {
-    transform: translateY(calc(-5rem - 5px));
-  }
-
-  31% {
-    transform: translateY(calc(-5rem + 5px));
-  }
-
-  /* divertida static */
   33%,
   55% {
     transform: translateY(-5rem);
   }
 
-  58% {
-    transform: translateY(calc(-10rem - 11px));
-  }
-
-  60% {
-    transform: translateY(calc(-10rem + 11px));
-  }
-
-  62% {
-    transform: translateY(calc(-10rem - 5px));
-  }
-
-  64% {
-    transform: translateY(calc(-10rem + 5px));
-  }
-
-  /* saudável static */
   66%,
   88% {
     transform: translateY(-10rem);
-  }
-
-  91% {
-    transform: translateY(calc(-15rem - 11px));
-  }
-
-  93% {
-    transform: translateY(calc(-15rem + 11px));
-  }
-
-  95% {
-    transform: translateY(calc(-15rem - 5px));
-  }
-
-  97% {
-    transform: translateY(calc(-15rem + 5px));
   }
 
   100% {

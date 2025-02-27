@@ -28,7 +28,7 @@
   --text-xl: 4rem;
 }
 
-body{
+body {
   background-color: var(--background);
 }
 
@@ -68,4 +68,8 @@ a {
 
 .flex {
   display: flex;
+}
+
+.items-center {
+  align-items: center;
 }
