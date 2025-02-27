@@ -16,7 +16,7 @@
   .bg-gradient {
     background: linear-gradient(
       65deg,
-      var(--snitap-joy-light),
+      var(--snitap-joy-light) 50%,
       var(--snitap-sky-light)
     );
     background-size: 400%;

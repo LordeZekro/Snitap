@@ -62,6 +62,22 @@ a {
   color: inherit;
 }
 
+.gap-\.5 {
+  gap: 0.5rem;
+}
+
+.gap-\.875 {
+  gap: 0.875rem;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.gap-2 {
+  gap: 2rem;
+}
+
 .px-2 {
   padding-inline: 2rem;
 }
@@ -70,6 +86,22 @@ a {
   display: flex;
 }
 
+.grid {
+  display: grid;
+}
+
 .items-center {
   align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.mx-auto{
+  margin-inline:auto;
 }

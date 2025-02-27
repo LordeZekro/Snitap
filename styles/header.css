@@ -1,9 +1,7 @@
 header {
   max-width: 80rem;
-  margin-inline: auto;
   padding-block: 1.2rem;
-  text-align: center;
-  justify-content: space-between;
+  
 
   a {
     display: inline-flex;
