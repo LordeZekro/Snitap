@@ -55,7 +55,8 @@
       gap: 0.75rem;
       border-radius: 666rem;
 
-      transition: 300ms;
+         
+     transition: scale 1s, box-shadow 1s ease-in-out;
 
       &.buy {
         background-color: var(--snitap-sun);
@@ -70,11 +71,10 @@
       }
 
       &.buy:hover {
-        /* transition: 200ms; */
         scale: 1.05;
-        
+      
         box-shadow: 
-        inset 4px 5px 5px rgba(255, 229, 151, 1),
+        inset 4px 4px 4px rgba(255, 229, 151, 1),
         inset 0 -5px 5px rgb(65, 20, 1, 0.2),
         0 6px 14px rgb(0, 0, 0, 0.1), 
         0 25px 25px rgb(0, 0, 0, 0.09),
